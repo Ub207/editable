@@ -3,119 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Resume</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .resume {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #34495e;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-            margin-top: 20px;
-        }
-        p, ul {
-            margin: 10px 0;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        .contact-info {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .contact-info a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        .section {
-            margin-bottom: 20px;
-        }
-        .section p {
-            margin: 5px 0;
-        }
-        .skills ul {
-            columns: 2;
-            list-style-type: none;
-            padding: 0;
-        }
-        .skills ul li {
-            margin-bottom: 5px;
-        }
-    </style>
+    <title>Editable Resume</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Editable-resume</h1>
+    <form id="resume-form">
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" placeholder="Enter your phone" required>
+        </fieldset>
 
-<div class="resume">
-    <h1>Your Name</h1>
-    <div class="contact-info">
-        <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a> | Phone: (123) 456-7890</p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a> | GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
+        <fieldset>
+            <legend>Education</legend>
+            <label for="education">Education:</label>
+            <textarea id="education" placeholder="Enter your education" rows="4" required></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Experience</legend>
+            <label for="experience">Experience:</label>
+            <textarea id="experience" placeholder="Enter your work experience" rows="4" required></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Skills</legend>
+            <label for="skills">Skills:</label>
+            <textarea id="skills" placeholder="Enter your skills" rows="4" required></textarea>
+        </fieldset>
+
+        <button type="submit" id="generate-btn"><b>Generate Resume</b></button>
+    </form>
+
+    <div id="resume-display" style="display: none;">
+        <button id="edit-btn">Edit</button>
+        <div id="resume-content"></div>
     </div>
 
-    <div class="section">
-        <h2>Summary</h2>
-        <p>Experienced software developer with a passion for creating efficient and scalable applications. Skilled in various programming languages and frameworks, with a strong focus on web development.</p>
-    </div>
-
-    <div class="section">
-        <h2>Experience</h2>
-        <p><strong>Software Developer</strong> - ABC Corp</p>
-        <p><em>June 2018 - Present</em></p>
-        <ul>
-            <li>Developed and maintained web applications using modern technologies such as React, Node.js, and MongoDB.</li>
-            <li>Collaborated with cross-functional teams to deliver high-quality software solutions.</li>
-        </ul>
-
-        <p><strong>Intern</strong> - XYZ Inc</p>
-        <p><em>May 2017 - August 2017</em></p>
-        <ul>
-            <li>Assisted in the development of internal tools and participated in code reviews.</li>
-            <li>Gained hands-on experience with Agile methodologies and version control systems like Git.</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Education</h2>
-        <p><strong>Bachelor of Science in Computer Science</strong> - University of Example</p>
-        <p><em>Graduated: May 2018</em></p>
-    </div>
-
-    <div class="section skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>Python</li>
-            <li>Git</li>
-            <li>HTML/CSS</li>
-            <li>SQL</li>
-            <li>Agile Methodologies</li>
-        </ul>
-    </div>
-</div>
-
+    <script src="script.js"></script>
 </body>
 </html>
