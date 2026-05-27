@@ -15,14 +15,21 @@ document.addEventListener("DOMContentLoaded", () => {
         const experience = document.getElementById('experience').value;
         const skills = document.getElementById('skills').value;
         // Populate the resume content
-        resumeContent.innerHTML = `
-            <div class="resume-section"><h2>Name</h2><p>${name}</p></div>
-            <div class="resume-section"><h2>Email</h2><p>${email}</p></div>
-            <div class="resume-section"><h2>Phone</h2><p>${phone}</p></div>
-            <div class="resume-section"><h2>Education</h2><p>${education}</p></div>
-            <div class="resume-section"><h2>Experience</h2><p>${experience}</p></div>
-            <div class="resume-section"><h2>Skills</h2><p>${skills}</p></div>
-        `;
+        resumeContent.innerHTML = '';
+        for (const [label, value] of [
+            ['Name', name], ['Email', email], ['Phone', phone],
+            ['Education', education], ['Experience', experience], ['Skills', skills]
+        ]) {
+            const section = document.createElement('div');
+            section.className = 'resume-section';
+            const heading = document.createElement('h2');
+            heading.textContent = label;
+            const para = document.createElement('p');
+            para.textContent = value;
+            section.appendChild(heading);
+            section.appendChild(para);
+            resumeContent.appendChild(section);
+        }
         // Hide the form and show the resume display
         form.style.display = 'none';
         resumeDisplay.style.display = 'block';
